@@ -8,6 +8,11 @@ function getComputerChoice() {
     return choices[pick];
 }
 // Function called playRound takes playerChoice and computerChoice as parameters, and declares the winner of the round.
+function playRound(computerChoice, playerChoice){
+    if (computerChoice == playerChoice) {
+        console.log("You have both picked "+computerChoice+", this round is a tie")
+    }
+}
 
 // Function called game runs playRound function five times, keeps track of score and declares a winner
 
