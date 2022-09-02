@@ -53,10 +53,15 @@ function playRound(computerChoice, playerChoice){
 }
 
 // Function called game runs playRound function five times, keeps track of score and declares a winner
-
+function game() {
+    for (let i = 0; i < 5; i++) {
+         const playerPick = prompt("Rock, Paper, or Scissors?: ")
+         playRound(getComputerChoice(), playerPick)
+    }
+}
 
 
 
 
 // Testing code
-playRound(getComputerChoice(), "paper")
+game()
