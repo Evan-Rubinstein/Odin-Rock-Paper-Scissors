@@ -12,51 +12,72 @@ function playRound(computerChoice, playerChoice){
     console.log("Player Choice: "+playerChoice)
     console.log("Computer Choice: "+computerChoice)
     if (computerChoice == playerChoice) { //Logic for if the computer and player pick the same element
-        console.log("You have both picked "+computerChoice+", this round is a tie")
+        return ("You have both picked "+computerChoice+", this round is a tie")
     }
     else if (computerChoice == "rock") { //Logic for if the computerChoice is rock. 
         if (playerChoice == "scissors") {
-            console.log("Computer Wins!")
+            return ("Computer Wins!")
         }
         else if (playerChoice == "paper") {
-            console.log("Player Wins!")
+            return ("Player Wins!")
         }
         else {
-            console.log("Something ain't right here...")
+            return ("Something ain't right here...")
         }
     }
-    else if (computerChoice == "paper") { // Logic for if the computerChoice is scissors
+    else if (computerChoice == "paper") { // Logic for if the computerChoice is paper
         if (playerChoice == "rock") {
-            console.log("Computer Wins!")
+            return ("Computer Wins!")
         }
         else if (playerChoice == "scissors") {
-            console.log("Player Wins!")
+            return ("Player Wins!")
         }
         else {
-            console.log("Something ain't right here 2")
+            return ("Something ain't right here 2")
         }
     }
-    else if (computerChoice == "scissors") {
+    else if (computerChoice == "scissors") { // Logic for if computerChoice is scissors
         if (playerChoice == "rock") {
-            console.log("Player Wins!")
+            return ("Player Wins!")
         }
         else if (playerChoice == "paper") {
-            console.log("Computer Wins!")
+            return ("Computer Wins!")
         }
         else {
-            console.log("Something ain't right here 4")
+            return ("Something ain't right here 4")
         }
     }
     else {
-        console.log("Something ain't right here 3")
+        return ("Something ain't right here 3")
     }
 }
 
 // Function called game runs playRound function five times, keeps track of score and declares a winner
 function game() {
+    // Initialize variables that will keep track of score 
+    let playerPoint;
+    let computerPoint;
+    // Loops over the following steps 5 times
     for (let i = 0; i < 5; i++) {
-         const playerPick = prompt("Rock, Paper, or Scissors?: ")
-         playRound(getComputerChoice(), playerPick)
+         const playerPick = prompt("Rock, Paper, or Scissors?: ").toLowerCase()
+         let outcome = playRound(getComputerChoice(), playerPick)
+         alert(outcome)
+         if (outcome == "Computer Wins!") {
+            computerPoint += 1
+         }
+         else if (outcome == "Player Wins!") {
+            playerPoint += 1
+         }
+
+    }
+    if (playerPoint > computerPoint) {
+        alert("The Player won the Match!")
+    }
+    else if (playerPoint < computerPoint) {
+        alert("The Computer won the Match!")
+    }
+    else {
+        alert("It's a tie!")
     }
 }
 
