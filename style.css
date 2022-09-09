@@ -1,14 +1,20 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
     outline: 1px solid red; /* Debug Only*/
 }
 
 .body {
-    display: flex;
-    align-items: center;
+    display: flex
 }
 
+.container {
+    max-width: 80em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 .header {
     display: flex;
@@ -21,8 +27,7 @@
     display: flex;
     justify-content: space-between;
     padding: 2em;
-    max-width: 80em;
-
+    font-size: 2em;
 }
 
 
@@ -30,11 +35,24 @@
     display: flex;
     justify-content: space-between;
     padding: 2em;
-    max-width: 80em;
-
+    font-size: 2em;
 }
 
 
+.choices ul {
+    display: flex;
+    padding: 2em;
+    justify-content: space-between;
+    list-style: none;
+    font-size: 2em;
+}
 
+.choices ul li {
+    padding: 2em;
+    background-color: rgb(77, 77, 243);
+    color: white;
+}
 
-
+.choices ul li:hover {
+    background-color: blue;
+}
